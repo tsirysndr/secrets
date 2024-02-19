@@ -12,7 +12,7 @@ I use Github as a single source of truth for my secrets, any change in the secre
 gh repo clone tsirysndr/secrets && cd secrets
 ```
 
-2 . Create a `terraform.tfvars` file with the following content:
+2 . Create a `secrets.tfvars` file with the following content:
 
 ```hcl
 gcp_credentials = "path/to/your/credentials.json"
