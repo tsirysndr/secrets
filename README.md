@@ -43,7 +43,7 @@ terraform apply -var-file=secrets.tfvars
 | gcp_credentials | The path to the GCP credentials file | `string` | n/a | yes |
 | gcp_project | The GCP project id | `string` | n/a | yes |
 | secrets | A map of secrets to store in Google Secret Manager | `map(string)` | n/a | yes |
-|gcp_region | The GCP region to create the secret | `string` | `us-central1` | no |
+|gcp_region | The GCP region to create the secret | `string` | `us-east1` | no |
 
 ## 📝 License
 
