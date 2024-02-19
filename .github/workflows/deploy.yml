@@ -1,0 +1,28 @@
+name: Terraform
+on:
+  push:
+    branches:
+      - main
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.37
+      - name: Setup Fluent CI CLI
+        uses: fluentci-io/setup-fluentci@v4
+      - name: Setup Service Account
+        run: echo $GCP_SERVICE_ACCOUNT > fluentci-086b644d4c53.json
+        env:
+          GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+      - name: Run Terraform Init, Validate and Plan
+        run: fluentci run . init validate plan
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: fluentci-086b644d4c53.json
+          TF_VERSION: 1.7.3
+          TF_VAR_secrets: |
+            {
+              "deno_deploy_token": ${{ secrets.DENO_DEPLOY_TOKEN }}
+            }
