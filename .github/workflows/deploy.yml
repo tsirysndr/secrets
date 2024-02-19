@@ -26,5 +26,5 @@ jobs:
           TF_VAR_gcp_project: fluentci
           TF_VAR_secrets: |
             {
-              "deno_deploy_token": ${{ secrets.DENO_DEPLOY_TOKEN }}
+              "deno_deploy_token": "${{ secrets.DENO_DEPLOY_TOKEN }}"
             }
