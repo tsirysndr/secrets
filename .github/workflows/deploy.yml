@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  tests:
+  apply:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -36,5 +36,5 @@ jobs:
               "shuttle_api_key": "${{ secrets.SHUTTLE_API_KEY }}",
               "sonar_token": "${{ secrets.SONAR_TOKEN }}",
               "spin_auth_token": "${{ secrets.SPIN_AUTH_TOKEN }}",
-              "wasmer_token": "${{ secrets.WASMER_TOKEN }}
+              "wasmer_token": "${{ secrets.WASMER_TOKEN }}"
             }
