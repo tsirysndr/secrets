@@ -1,5 +1,7 @@
 # Secrets 🏠 🔐
 
+[![terraform apply](https://github.com/tsirysndr/secrets/actions/workflows/deploy.yml/badge.svg)](https://github.com/tsirysndr/secrets/actions/workflows/deploy.yml)
+
 This is my [terraform](https://terraform.io) code to keep all my secrets in sync across all my devices. It uses Google Secret Manager to store the secrets so I can access them from anywhere later using [teller](https://tlr.dev/).
 
 I use Github Secrets as a single source of truth for my secrets. Github Actions will then use this terraform code to store the secrets in Google Secret Manager.
