@@ -2,7 +2,7 @@
 
 This is my [terraform](https://terraform.io) code to keep all my secrets in sync across all my devices. It uses Google Secret Manager to store the secrets so I can access them from anywhere later using [teller](https://tlr.dev/).
 
-I use Github as a single source of truth for my secrets, any change in the secrets will trigger a Github Action that will update the secrets in Google Secret Manager.
+I use Github Secrets as a single source of truth for my secrets. Github Actions will then use this terraform code to store the secrets in Google Secret Manager.
 
 ## 🚀 Quickstart
 
