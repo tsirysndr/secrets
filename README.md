@@ -6,13 +6,13 @@ I use Github as a single source of truth for my secrets, any change in the secre
 
 ## 🚀 Quickstart
 
-1. Clone this repository
+1 . Clone this repository
 
 ```sh
 gh repo clone tsirysndr/secrets && cd secrets
 ```
 
-2. Create a `terraform.tfvars` file with the following content:
+2 . Create a `terraform.tfvars` file with the following content:
 
 ```hcl
 gcp_credentials = "path/to/your/credentials.json"
@@ -25,7 +25,7 @@ secrets = {
 }
 ```
 
-1. Run the following commands:
+3 . Run the following commands:
 
 ```sh
 terraform init
