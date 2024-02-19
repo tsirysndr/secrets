@@ -17,7 +17,7 @@ jobs:
         run: echo $GCP_SERVICE_ACCOUNT > fluentci-086b644d4c53.json
         env:
           GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
-      - name: Run Terraform Init, Validate and Plan
+      - name: Run Terraform Init, Validate, Plan and Apply
         run: fluentci run . init validate plan
         env:
           GOOGLE_APPLICATION_CREDENTIALS: fluentci-086b644d4c53.json
@@ -26,5 +26,15 @@ jobs:
           TF_VAR_gcp_project: fluentci
           TF_VAR_secrets: |
             {
-              "deno_deploy_token": "${{ secrets.DENO_DEPLOY_TOKEN }}"
+              "cf_aws_access_key_id": "${{ secrets.CF_AWS_ACCESS_KEY_ID }}",
+              "cf_aws_secret_access_key": "${{ secrets.CF_AWS_SECRET_ACCESS_KEY}}",
+              "deno_deploy_token": "${{ secrets.DENO_DEPLOY_TOKEN }}",
+              "mvola_consumer_key": "${{ secrets.MVOLA_CONSUMER_KEY }}",
+              "mvola_consumer_secret": "${{ secrets.MVOLA_CONSUMER_SECRET }}",
+              "netlify_auth_token": "${{ secrets.NETLIFY_AUTH_TOKEN }}",
+              "pulumi_access_token": "${{ secrets.PULUMI_ACCESS_TOKEN }}",
+              "shuttle_api_key": "${{ secrets.SHUTTLE_API_KEY }}",
+              "sonar_token": "${{ secrets.SONAR_TOKEN }}",
+              "spin_auth_token": "${{ secrets.SPIN_AUTH_TOKEN }}",
+              "wasmer_token": "${{ secrets.WASMER_TOKEN }}
             }
