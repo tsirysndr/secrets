@@ -21,6 +21,7 @@ jobs:
       - name: Run Terraform Init, Validate, Plan and Apply
         run: fluentci run . init validate plan apply
         env:
+          DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
           GOOGLE_APPLICATION_CREDENTIALS: fluentci-086b644d4c53.json
           TF_VERSION: 1.7.3
           TF_VAR_gcp_credentials: fluentci-086b644d4c53.json
@@ -29,6 +30,7 @@ jobs:
             {
               "cf_aws_access_key_id": "${{ secrets.CF_AWS_ACCESS_KEY_ID }}",
               "cf_aws_secret_access_key": "${{ secrets.CF_AWS_SECRET_ACCESS_KEY}}",
+              "dagger_cloud_token": "${{ secrets.DAGGER_CLOUD_TOKEN }}",
               "deno_deploy_token": "${{ secrets.DENO_DEPLOY_TOKEN }}",
               "mvola_consumer_key": "${{ secrets.MVOLA_CONSUMER_KEY }}",
               "mvola_consumer_secret": "${{ secrets.MVOLA_CONSUMER_SECRET }}",
@@ -38,5 +40,4 @@ jobs:
               "sonar_token": "${{ secrets.SONAR_TOKEN }}",
               "spin_auth_token": "${{ secrets.SPIN_AUTH_TOKEN }}",
               "wasmer_token": "${{ secrets.WASMER_TOKEN }}",
-              "dagger_cloud_token": "${{ secrets.DAGGER_CLOUD_TOKEN }}",
             }
