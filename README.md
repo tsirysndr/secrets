@@ -34,7 +34,7 @@ terraform plan -var-file=secrets.tfvars
 terraform apply -var-file=secrets.tfvars
 ```
 
-## Inputs 📥
+## 📥 Inputs 
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|----------|
