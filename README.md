@@ -43,6 +43,6 @@ terraform apply -var-file=secrets.tfvars
 | secrets | A map of secrets to store in Google Secret Manager | `map(string)` | n/a | yes |
 |gcp_region | The GCP region to create the secret | `string` | `us-central1` | no |
 
-## License 📝
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
