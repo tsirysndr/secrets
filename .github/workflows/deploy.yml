@@ -18,7 +18,7 @@ jobs:
         env:
           GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
       - name: Run Terraform Init, Validate, Plan and Apply
-        run: fluentci run . init validate plan
+        run: fluentci run . init validate plan apply
         env:
           GOOGLE_APPLICATION_CREDENTIALS: fluentci-086b644d4c53.json
           TF_VERSION: 1.7.3
