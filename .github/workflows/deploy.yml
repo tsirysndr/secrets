@@ -37,5 +37,6 @@ jobs:
               "shuttle_api_key": "${{ secrets.SHUTTLE_API_KEY }}",
               "sonar_token": "${{ secrets.SONAR_TOKEN }}",
               "spin_auth_token": "${{ secrets.SPIN_AUTH_TOKEN }}",
-              "wasmer_token": "${{ secrets.WASMER_TOKEN }}"
+              "wasmer_token": "${{ secrets.WASMER_TOKEN }}",
+              "dagger_cloud_token": "${{ secrets.DAGGER_CLOUD_TOKEN }}",
             }
