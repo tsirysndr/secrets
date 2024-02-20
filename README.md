@@ -2,9 +2,9 @@
 
 [![terraform apply](https://github.com/tsirysndr/secrets/actions/workflows/deploy.yml/badge.svg)](https://github.com/tsirysndr/secrets/actions/workflows/deploy.yml)
 
-This is my [terraform](https://terraform.io) code to keep all my secrets in sync across all my devices. It uses Google Secret Manager and Cloudflare Wroker Secrets to store the secrets so I can access them from anywhere later using [teller](https://tlr.dev/).
+This is my [terraform](https://terraform.io) code to keep all my secrets in sync across all my devices. It uses [Google Secret Manager](https://cloud.google.com/secret-manager) and [Cloudflare Worker Secrets](https://developers.cloudflare.com/workers/configuration/secrets/) to store the secrets so I can access them from anywhere later using [teller](https://tlr.dev/).
 
-I use [Github Secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) as a single source of truth for my secrets. Github Actions will then use this terraform code to store the secrets in Google Secret Manager and Cloudflare Secrets.
+I use [Github Secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) as a single source of truth for my secrets. Github Actions will then use this terraform code to store the secrets in [Google Secret Manager](https://cloud.google.com/secret-manager) and [Cloudflare Secrets](https://developers.cloudflare.com/workers/configuration/secrets/) on every `git push` to this repository.
 
 ## 🚀 Quickstart
 
@@ -45,7 +45,7 @@ terraform apply -var-file=secrets.tfvars
 | gcp_credentials | The path to the GCP credentials file | `string` | n/a | yes |
 | gcp_project | The GCP project id | `string` | n/a | yes |
 | gcp_region | The GCP region to create the secret | `string` | `us-east1` | no |
-| secrets | A map of secrets to store in Google Secret Manager | `map(string)` | n/a | yes |
+| secrets | A map of secrets to store in Google Secret Manager / Cloudflare Wroker Secrets | `map(string)` | n/a | yes |
 | worker_name | The Cloudflare worker name | `string` | n/a | yes |
 
 ## 📝 License
