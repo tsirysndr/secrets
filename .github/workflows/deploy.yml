@@ -19,7 +19,7 @@ jobs:
         env:
           GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
       - name: Run Terraform Init, Validate, Plan and Apply
-        run: fluentci run . init validate plan apply
+        run: fluentci run terraform_pipeline init validate plan apply
         env:
           DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
           GOOGLE_APPLICATION_CREDENTIALS: fluentci-086b644d4c53.json
