@@ -6,12 +6,12 @@ provider "google" {
 
 resource "google_project_service" "secretmanager" {
   provider = google
-  service = "secretmanager.googleapis.com"
+  service  = "secretmanager.googleapis.com"
 }
 
 resource "google_secret_manager_secret" "secrets" {
-  for_each = var.secrets
-  provider = google
+  for_each  = var.secrets
+  provider  = google
   secret_id = each.key
 
   replication  {
@@ -29,9 +29,9 @@ resource "google_secret_manager_secret" "secrets" {
 }
 
 resource "google_secret_manager_secret_version" "secrets" {
-  for_each = var.secrets
-  provider = google
-  secret = google_secret_manager_secret.secrets[each.key].id
+  for_each    = var.secrets
+  provider    = google
+  secret      = google_secret_manager_secret.secrets[each.key].id
   secret_data = var.secrets[each.key]
 }
 

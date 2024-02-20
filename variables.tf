@@ -1,3 +1,8 @@
+variable "cloudflare_api_token" {
+  type        = string
+  description = "Cloudflare API token"
+}
+
 variable "gcp_credentials" {
   type       = string
   description = "GCP credentials"
@@ -17,4 +22,14 @@ variable "gcp_region" {
 variable "secrets" {
   type        = map(string)
   description = "A map of secrets names and their respective values"
+}
+
+variable "account_id" {
+  type        = string
+  description = "Cloudflare account ID"
+}
+
+variable "worker_name" {
+  type        = string
+  description = "Name of the Cloudflare Worker"
 }
