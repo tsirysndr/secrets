@@ -26,11 +26,15 @@ jobs:
           TF_VERSION: 1.7.3
           TF_VAR_gcp_credentials: fluentci-086b644d4c53.json
           TF_VAR_gcp_project: fluentci
+          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_WORKER_TOKEN }}
+          TF_VAR_account_id: fe5b1e2ce9f94f4c0415ab94ce402012
+          TF_VAR_worker_name: envhub-installer
           TF_VAR_secrets: |
             {
               "cargo_registry_token": "${{ secrets.CARGO_REGISTRY_TOKEN }}",
               "cf_aws_access_key_id": "${{ secrets.CF_AWS_ACCESS_KEY_ID }}",
               "cf_aws_secret_access_key": "${{ secrets.CF_AWS_SECRET_ACCESS_KEY}}",
+              "cloudflare_worker_token": "${{ secrets.CLOUDFLARE_WORKER_TOKEN }}",
               "dagger_cloud_token": "${{ secrets.DAGGER_CLOUD_TOKEN }}",
               "deno_deploy_token": "${{ secrets.DENO_DEPLOY_TOKEN }}",
               "hex_api_key": "${{ secrets.HEX_API_KEY }}",
