@@ -21,11 +21,13 @@ providers:
   # https://cloud.google.com/secret-manager/docs/reference/libraries#setting_up_authentication
   google_secretmanager:
     env:
-      CARGO_REGISTRY_TOKEN_SECRET:
+      CARGO_REGISTRY_TOKEN:
         # need to supply the relevant version (versions/1)
         path: projects/400737752375/secrets/cargo_registry_token/versions/1
       CLOUDFLARE_ROOT_KEY:
         path: projects/400737752375/secrets/cloudflare_root_key/versions/1
+      CLOUDFLARE_WORKER_TOKEN:
+        path: projects/400737752375/secrets/cloudflare_worker_token/versions/1
       AWS_ACCESS_KEY_ID:
         path: projects/400737752375/secrets/cf_aws_access_key_id/versions/1
       AWS_SECRET_ACCESS_KEY:
@@ -36,9 +38,9 @@ providers:
         path: projects/400737752375/secrets/deno_deploy_token/versions/1
       HEX_API_KEY:
         path: projects/400737752375/secrets/hex_api_key/versions/1
-      CONSUMER_KEY:
+      MVOLA_CONSUMER_KEY:
         path: projects/400737752375/secrets/mvola_consumer_key/versions/1
-      CONSUMER_SECRET:
+      MVOLA_CONSUMER_SECRET:
         path: projects/400737752375/secrets/mvola_consumer_secret/versions/1
       NETLIFY_AUTH_TOKEN:
         path: projects/400737752375/secrets/netlify_auth_token/versions/1
