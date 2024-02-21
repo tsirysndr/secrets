@@ -9,6 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Cache Homebrew directory
+        uses: actions/cache@v2
+        with:
+          path: /home/linuxbrew/.linuxbrew
+          key: ${{ runner.os }}-brew
+          restore-keys: |
+            ${{ runner.os }}-brew-
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.37
