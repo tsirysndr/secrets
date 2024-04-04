@@ -54,6 +54,8 @@ jobs:
               "sonar_token": "${{ secrets.SONAR_TOKEN }}",
               "spin_auth_token": "${{ secrets.SPIN_AUTH_TOKEN }}",
               "wasmer_token": "${{ secrets.WASMER_TOKEN }}",
+              "ssh_private_key": "${{ secrets.SSH_PRIVATE_KEY }}",
+              "gpg_private_key": "${{ secrets.GPG_PRIVATE_KEY }}",
             }
       - name: Install Homebrew
         run: |
