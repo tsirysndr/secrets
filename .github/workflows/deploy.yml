@@ -54,6 +54,25 @@ jobs:
               "sonar_token": "${{ secrets.SONAR_TOKEN }}",
               "spin_auth_token": "${{ secrets.SPIN_AUTH_TOKEN }}",
               "wasmer_token": "${{ secrets.WASMER_TOKEN }}",
+            }
+          TF_VAR_secrets_gcp: |
+            { 
+              "cargo_registry_token": "${{ secrets.CARGO_REGISTRY_TOKEN }}",
+              "cf_aws_access_key_id": "${{ secrets.CF_AWS_ACCESS_KEY_ID }}",
+              "cf_aws_secret_access_key": "${{ secrets.CF_AWS_SECRET_ACCESS_KEY}}",
+              "cloudflare_root_key": "${{ secrets.CLOUDFLARE_ROOT_KEY }}",
+              "cloudflare_worker_token": "${{ secrets.CLOUDFLARE_WORKER_TOKEN }}",
+              "dagger_cloud_token": "${{ secrets.DAGGER_CLOUD_TOKEN }}",
+              "deno_deploy_token": "${{ secrets.DENO_DEPLOY_TOKEN }}",
+              "hex_api_key": "${{ secrets.HEX_API_KEY }}",
+              "mvola_consumer_key": "${{ secrets.MVOLA_CONSUMER_KEY }}",
+              "mvola_consumer_secret": "${{ secrets.MVOLA_CONSUMER_SECRET }}",
+              "netlify_auth_token": "${{ secrets.NETLIFY_AUTH_TOKEN }}",
+              "pulumi_access_token": "${{ secrets.PULUMI_ACCESS_TOKEN }}",
+              "shuttle_api_key": "${{ secrets.SHUTTLE_API_KEY }}",
+              "sonar_token": "${{ secrets.SONAR_TOKEN }}",
+              "spin_auth_token": "${{ secrets.SPIN_AUTH_TOKEN }}",
+              "wasmer_token": "${{ secrets.WASMER_TOKEN }}",
               "ssh_private_key": "${{ secrets.SSH_PRIVATE_KEY }}",
               "gpg_private_key": "${{ secrets.GPG_PRIVATE_KEY }}",
             }
@@ -104,5 +123,7 @@ jobs:
           printenv | grep -q '^SONAR_TOKEN='
           printenv | grep -q '^SPIN_AUTH_TOKEN='
           printenv | grep -q '^WASMER_TOKEN='
+          printenv | grep -q '^SSH_PRIVATE_KEY='
+          printenv | grep -q '^GPG_PRIVATE_KEY='
         env:
           GOOGLE_APPLICATION_CREDENTIALS: fluentci-086b644d4c53.json

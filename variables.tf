@@ -24,6 +24,11 @@ variable "secrets" {
   description = "A map of secrets names and their respective values"
 }
 
+variable "secrets_gcp" {
+  type        = map(string)
+  description = "A map of secrets names and their respective values"
+}
+
 variable "account_id" {
   type        = string
   description = "Cloudflare account ID"

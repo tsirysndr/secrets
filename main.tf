@@ -29,10 +29,10 @@ resource "google_secret_manager_secret" "secrets" {
 }
 
 resource "google_secret_manager_secret_version" "secrets" {
-  for_each    = var.secrets
+  for_each    = var.secrets_gcp
   provider    = google
   secret      = google_secret_manager_secret.secrets[each.key].id
-  secret_data = var.secrets[each.key]
+  secret_data = var.secrets_gcp[each.key]
 }
 
 terraform {
