@@ -54,3 +54,7 @@ providers:
         path: projects/400737752375/secrets/spin_auth_token/versions/1
       WASMER_TOKEN:
         path: projects/400737752375/secrets/wasmer_token/versions/1
+      SSH_PRIVATE_KEY:
+        path: projects/400737752375/secrets/ssh_private_key/versions/1
+      GPG_PRIVATE_KEY:
+        path: projects/400737752375/secrets/gpg_private_key/versions/1
