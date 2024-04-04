@@ -10,7 +10,7 @@ resource "google_project_service" "secretmanager" {
 }
 
 resource "google_secret_manager_secret" "secrets" {
-  for_each  = var.secrets
+  for_each  = var.secrets_gcp
   provider  = google
   secret_id = each.key
 
