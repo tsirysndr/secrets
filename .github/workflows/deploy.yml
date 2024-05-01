@@ -75,6 +75,7 @@ jobs:
               "wasmer_token": "${{ secrets.WASMER_TOKEN }}",
               "ssh_private_key": "${{ secrets.SSH_PRIVATE_KEY }}",
               "gpg_private_key": "${{ secrets.GPG_PRIVATE_KEY }}",
+              "demo_keys": "${{ secrets.DEMO_KEYS }}",
             }
       - name: Install Homebrew
         run: |
