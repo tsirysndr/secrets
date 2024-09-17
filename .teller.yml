@@ -20,6 +20,7 @@ providers:
   # GOOGLE_APPLICATION_CREDENTIALS=foobar.json
   # https://cloud.google.com/secret-manager/docs/reference/libraries#setting_up_authentication
   google_secretmanager:
+    kind: google_secretmanager
     env:
       CARGO_REGISTRY_TOKEN:
         # need to supply the relevant version (versions/1)
