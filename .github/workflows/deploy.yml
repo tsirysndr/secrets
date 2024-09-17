@@ -16,17 +16,18 @@ jobs:
           key: ${{ runner.os }}-brew
           restore-keys: |
             ${{ runner.os }}-brew-
-      - uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.37
       - name: Setup Fluent CI CLI
-        uses: fluentci-io/setup-fluentci@v4
+        uses: fluentci-io/setup-fluentci@v5
       - name: Setup Service Account
         run: echo $GCP_SERVICE_ACCOUNT > fluentci-086b644d4c53.json
         env:
           GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
       - name: Run Terraform Init, Validate, Plan and Apply
-        run: fluentci run terraform_pipeline init validate plan apply
+        run: |
+          fluentci run --wasm terraform init
+          fluentci run --wasm terraform validate
+          fluentci run --wasm terraform plan
+          fluentci run --wasm terraform apply -auto-approve
         env:
           DAGGER_CLOUD_TOKEN: ${{ secrets.DAGGER_CLOUD_TOKEN }}
           GOOGLE_APPLICATION_CREDENTIALS: fluentci-086b644d4c53.json
@@ -74,8 +75,11 @@ jobs:
               "spin_auth_token": "${{ secrets.SPIN_AUTH_TOKEN }}",
               "wasmer_token": "${{ secrets.WASMER_TOKEN }}",
               "ssh_private_key": "${{ secrets.SSH_PRIVATE_KEY }}",
+              "ssh_public_key": "${{ secrets.SSH_PUBLIC_KEY }}",
               "gpg_private_key": "${{ secrets.GPG_PRIVATE_KEY }}",
               "demo_keys": "${{ secrets.DEMO_KEYS }}",
+              "ssh_private_key_ed25519": "${{ secrets.SSH_PRIVATE_KEY_ED25519 }}",
+              "ssh_public_key_ed25519": "${{ secrets.SSH_PUBLIC_KEY_ED25519 }}",
             }
       - name: Install Homebrew
         run: |
