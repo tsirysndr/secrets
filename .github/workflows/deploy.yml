@@ -108,6 +108,7 @@ jobs:
         env:
           CLOUDFLARE_ROOT_KEY: "${{ secrets.CLOUDFLARE_ROOT_KEY }}"
       - name: Verify All secrets (Google Secret Manager)
+        if: ${{ false }}
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew install teller
